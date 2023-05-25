@@ -9,5 +9,10 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable =['name', 'content'];
-    //protected $guarded = ['slug', 'image']; //il mass update prenderà in considerazione tutto tranne lo slug e image
+    //protected $guarded = ['slug', 'image'];
+     //il mass update prenderà in considerazione tutto tranne lo slug e image
+
+     public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }

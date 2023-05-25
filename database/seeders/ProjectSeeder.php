@@ -22,13 +22,13 @@ class ProjectSeeder extends Seeder
 
 
         for ($i = 0; $i < 10; $i++) {
-            
-            $type = Type::inRandomOrder()->first(); //prende un oggetto random all'interno di Type
+
+            $type = Type::inRandomOrder()->first(); //prende un'istanza random all'interno di Type
             $project = new Project();
             $project->name = $faker->sentence(3);
             $project->content = $faker->text(600);
             $project->slug = Str::slug($project->name);
-            $project->type_id = $type->id; //assegno al project tyep_id proprio il type id
+            $project->type_id = $type->id; //associo al project type_id proprio il type id
             $project->save();
         }
     }
