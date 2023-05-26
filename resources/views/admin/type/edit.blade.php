@@ -37,16 +37,7 @@
                     <input class="form-control" type="file" id="image" name="image">
                 </div>
                 <!--/container input img -->
-                <div>
-                    <label for="type_id" class="form-label">Type</label>
-                    <select class="form-select" id="type_id" name="type_id">
-                        <option value="">Select type</option>
-                        @foreach ($types as $type)
-                            <option value="{{old('type_id') == $type->id ? 'selected' : ''}}" >{{ $type->name }}</option>
-                            @endforeach
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-warning my-3">Confirm edit</button>
+                <button type="submit" class="btn btn-warning">Confirm edit</button>
             </form>
         </div>
     </div>

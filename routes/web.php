@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::middleware(['auth', 'verified'])
 
     Route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']);
     //con parameters impostazione per usare slug come elemento di riferimento per la ricerca e non più id
+    Route::resource('types', TypeController::class)->parameters(['types'=>'type:slug']);
 
     //Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     //Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
